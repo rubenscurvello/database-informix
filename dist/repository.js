@@ -10,7 +10,7 @@ class Repository {
         }
         catch (e) { }
     }
-    getInvoices(pagination) {
+    async getInvoices(pagination) {
         try {
             return this.connector.execute("invoices");
         }

@@ -16,7 +16,9 @@ export default class Repository implements RepositoryInterface {
       return this.connector.execute("clients") as Promise<Client[]>;
     } catch (e) {}
   }
-  getInvoices(pagination: PaginationInterface): Promise<Invoice[] | void> {
+  async getInvoices(
+    pagination: PaginationInterface
+  ): Promise<Invoice[] | void> {
     try {
       return this.connector.execute("invoices") as Promise<Invoice[]>;
     } catch (e) {}
