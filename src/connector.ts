@@ -7,9 +7,8 @@ import {
 const informix = require("informixdb");
 
 let informixConnect: any;
-
 export default class Connector implements ConnectorInterface {
-  private dsn: string;
+  private dsn: any;
   constructor(config: ConfigDatabaseInterface) {
     this.dsn = `SERVER=${config.server};
     DATABASE=${config.collation};
