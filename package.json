@@ -1,0 +1,17 @@
+{
+  "name": "ftp",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "license": "APACHE",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration"
+  },
+  "dependencies": {
+    "informixdb": "^2.2.0",
+    "types": "https://github.com/rubenscurvello/types.git"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.1"
+  }
+}
