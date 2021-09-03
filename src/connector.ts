@@ -10,12 +10,7 @@ let informixConnect: any;
 export default class Connector implements ConnectorInterface {
   private dsn: any;
   constructor(config: ConfigDatabaseInterface) {
-    this.dsn = `SERVER=${config.server};
-    DATABASE=${config.collation};
-    HOST=${config.host};
-    SERVICE=${config.port};
-    UID=${config.username};
-    PWD=${config.password};`;
+    this.dsn = `SERVER=${config.server};DATABASE=${config.collation};HOST=${config.host};SERVICE=${config.port};UID=${config.username};PWD=${config.password};`;
   }
   connect() {
     if (!informixConnect) {
@@ -34,10 +29,14 @@ export default class Connector implements ConnectorInterface {
     }
     switch (type) {
       case "invoices":
-        resultSet = informixConnect.querySync("select * from locales_ext");
+        resultSet = informixConnect.querySync(
+          "SELECT * FROM informix.flags_text"
+        );
         break;
       case "clients":
-        resultSet = informixConnect.querySync("select * from locales_ext");
+        resultSet = informixConnect.querySync(
+          "SELECT * FROM informix.flags_text"
+        );
         break;
     }
 

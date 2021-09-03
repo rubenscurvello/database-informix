@@ -4,12 +4,7 @@ const informix = require("informixdb");
 let informixConnect;
 class Connector {
     constructor(config) {
-        this.dsn = `SERVER=${config.server};
-    DATABASE=${config.collation};
-    HOST=${config.host};
-    SERVICE=${config.port};
-    UID=${config.username};
-    PWD=${config.password};`;
+        this.dsn = `SERVER=${config.server};DATABASE=${config.collation};HOST=${config.host};SERVICE=${config.port};UID=${config.username};PWD=${config.password};`;
     }
     connect() {
         if (!informixConnect) {
@@ -28,10 +23,10 @@ class Connector {
         }
         switch (type) {
             case "invoices":
-                resultSet = informixConnect.querySync("select * from locales_ext");
+                resultSet = informixConnect.querySync("SELECT * FROM informix.flags_text");
                 break;
             case "clients":
-                resultSet = informixConnect.querySync("select * from locales_ext");
+                resultSet = informixConnect.querySync("SELECT * FROM informix.flags_text");
                 break;
         }
         informixConnect.closeSync();
