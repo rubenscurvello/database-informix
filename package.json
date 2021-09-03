@@ -1,5 +1,5 @@
 {
-  "name": "ftp",
+  "name": "database-informix",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "license": "APACHE",
